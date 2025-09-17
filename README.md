@@ -9,27 +9,7 @@ It allows users to **fetch articles**, **like/dislike them**, and **view liked/d
 
 We follow **Clean Architecture** with 3 main layers:  
 
-lib/
-└── features/
-└── articles/
-├── data/ # Deals with APIs, local storage, and models
-│ ├── datasources/
-│ ├── models/
-│ └── repositories/
-├── domain/ # Pure Dart code (business rules)
-│ ├── entities/
-│ ├── repositories/
-│ └── usecases/
-└── presentation/ # UI + State management (Bloc)
-├── bloc/
-├── pages/
-└── widgets/
-└── injection_container.dart # Dependency injection setup
-└── app.dart # Root widget
-└── main.dart # Entry point
-
-
----
+<img width="571" height="399" alt="{6525507E-5353-4A67-B4BE-08A5A086A33C}" src="https://github.com/user-attachments/assets/6197ee22-7dc9-4fb7-818e-6e7f181199ff" />
 
 ## 🏗 Layers Explained
 
@@ -72,37 +52,26 @@ We use **get_it** as Service Locator.
 ```dart
 sl.registerLazySingleton(() => http.Client()); // created only when used
 sl.registerFactory(() => HomeBloc(getArticles: sl())); // new instance every time
-
+```
 🚀 Features
 
-Fetch latest articles from API.
-
-Swipe right 👍 to like an article.
-
-Swipe left 👎 to dislike an article.
-
-View Liked Articles and Disliked Articles on separate pages.
-
-Offline storage for liked/disliked articles.
+- Fetch latest articles from API.
+- Swipe right 👍 to like an article.
+- Swipe left 👎 to dislike an article.
+- View Liked Articles and Disliked Articles on separate pages.
+- Offline storage for liked/disliked articles.
 
 🛠 Tech Stack
 
-Flutter – UI framework.
-
-BLoC – State management.
-
-Clean Architecture – Project structure.
-
-GetIt – Dependency Injection.
-
-SharedPreferences – Local storage.
-
-HTTP – API calls.
+- **Flutter** – UI framework.
+- **BLoC** – State management.
+- **Clean Architecture** – Project structure.
+- **GetIt** – Dependency Injection.
+- **SharedPreferences** – Local storage.
+- **HTTP** – API calls.
 
 📸 Screens (Example)
 
-Home Screen → Swipe articles (like/dislike).
-
-Liked Screen → View liked articles.
-
-Disliked Screen → View disliked articles.
+- **Home Screen** → Swipe articles (like/dislike).
+- **Liked Screen** → View liked articles.
+- **Disliked Screen** → View disliked articles.
